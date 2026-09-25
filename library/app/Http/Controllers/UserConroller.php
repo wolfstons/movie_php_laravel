@@ -28,7 +28,9 @@ class UserConroller extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $record=new User();
+        $record->create($request->all());
+        return $record;
     }
 
     /**
@@ -52,7 +54,7 @@ class UserConroller extends Controller
      */
     public function update(Request $request, user $user)
     {
-        //
+        return $user->update($request->all());        
     }
 
     /**
@@ -60,6 +62,6 @@ class UserConroller extends Controller
      */
     public function destroy(user $user)
     {
-        //
+        return $record=User::destroy($user->id);
     }
 }

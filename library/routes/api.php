@@ -10,3 +10,6 @@ Route::get('/user', function (Request $request) {
 
 Route::get('/users', [UserConroller::class, 'index']);
 Route::get('/users/{user}', [UserConroller::class, 'show']);
+Route::put('/users/{user}', [UserConroller::class, 'update']);
+Route::post('/users', [UserConroller::class, 'store']);
+Route::delete('/users/{user}', [UserConroller::class, 'destroy']);

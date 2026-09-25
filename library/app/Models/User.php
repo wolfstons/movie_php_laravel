@@ -29,4 +29,8 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+    function lendings()
+    {
+        return $this->hasMany(Lending::class);
+    }
 }
