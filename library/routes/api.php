@@ -9,3 +9,4 @@ Route::get('/user', function (Request $request) {
 })->middleware('auth:sanctum');
 
 Route::get('/users', [UserConroller::class, 'index']);
+Route::get('/users/{user}', [UserConroller::class, 'show']);
