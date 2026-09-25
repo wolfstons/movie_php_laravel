@@ -14,7 +14,9 @@ return new class extends Migration
         Schema::create('copies', function (Blueprint $table) {
             $table->id();
             $table->foreignId('book_id')->constrained();
-            $table->foreignId('user_id')->constrained();
+            $table->boolean("hardcover")->default(false);
+            $table->date("publication")->nullable();
+            $table->status("available")->default(true);
             $table->timestamps();
         });
     }
